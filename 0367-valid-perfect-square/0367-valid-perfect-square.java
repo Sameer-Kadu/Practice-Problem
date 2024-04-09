@@ -1,19 +1,23 @@
 class Solution {
     public boolean isPerfectSquare(int num) {
-        int i=1;
-        while(num > 0)
-        {
-            // if num - i = 0 squre exist
-            //Repeatedly subtracting consecutive odd numbers from it
-            //Subtract till the difference is zero
-            //Number of times we subtract is the required square root
-            num = num - i;
-            i=i+2;
+        if (num == 0) // Special case: 0 is a perfect square
+            return true;
+        
+        long left = 1; // Start from 1
+        long right = num; // End at num
+        
+        while (left <= right) {
+            long mid = left + (right - left) / 2;
+            long square = mid * mid;
+            
+            if (square == num)
+                return true;
+            else if (square < num)
+                left = mid + 1;
+            else
+                right = mid - 1;
         }
-        if(num < 0)
-        {
-            return false;
-        }
-        return true;
+        
+        return false;
     }
 }
