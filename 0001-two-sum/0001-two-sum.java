@@ -8,17 +8,15 @@ class Solution {
         {
             if(nums[i]+nums[j]==target)
             {
-               r[0]=i;
-               r[1]=j;
-               c=1;
-               break;
+             return new int[] {i,j};
+            }
+            if(nums[(nums.length-1)-i]+nums[(nums.length-1)-j]==target)
+            {
+                return new int[] {(nums.length-1)-i,(nums.length-1)-j};
             }
 
         }
-        if(c==1)
-        {
-            break;
-        }
+        
        }
         return r;
     }
