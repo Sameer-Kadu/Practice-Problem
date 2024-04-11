@@ -6,7 +6,7 @@ class Solution {
     int max3 = Integer.MIN_VALUE;
     int min1 = Integer.MAX_VALUE;
     int min2 = Integer.MAX_VALUE;
-
+    //Arrays.sort(nums)
     for (int num : nums) {
         if (num > max1) {
             max3 = max2;
