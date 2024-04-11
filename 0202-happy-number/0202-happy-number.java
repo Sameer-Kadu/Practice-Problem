@@ -1,7 +1,7 @@
 class Solution {
     public boolean isHappy(int n) {
         int r =0;
-        if(n == 58)
+        if(n == 4)
         {
             return false;
         }
